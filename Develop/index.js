@@ -61,6 +61,11 @@ const promptUser = () =>
             message: 'What does the user need to know about contributing to the repo?',
             name: 'contrepo',
         },
+        {
+            type: 'input',
+            message: 'How can the user contact you for questions about the repo?',
+            name: 'questions',
+        },
 
     ]);
 
