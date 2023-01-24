@@ -1,8 +1,8 @@
 
-# generate readme
-![GitHub](https://img.shields.io/github/license/zechb7/generate readme)
+# a
+![GitHub](https://img.shields.io/github/license/a/a)
 ## Description
-creates a readem
+a
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
@@ -14,11 +14,11 @@ creates a readem
 To install necessary dependencies, run the following command:
 npm i
 ## Usage 
-use it
+a
 ## License
-This project is licensed under the MIT License.
+  This project is licensed under the MIT License.
 ## Contributing
-dont
+a
 ## Tests
 To run tests, run the following command:
 npm test
