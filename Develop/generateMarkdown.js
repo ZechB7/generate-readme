@@ -19,9 +19,8 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license !== "None")  {
-    return `
-    ## License
-    This project is licensed under the ${license} license.`
+    return `## License\nThis project is licensed under the ${license} license.
+    `
 }
 return " ";
 }
@@ -35,7 +34,8 @@ ${data.description}
 
 ## Table of Contents
 * [Installation](#installation)
-* [Usage](#usage) ${renderLicenseLink(data.license)}
+* [Usage](#usage) 
+${renderLicenseLink(data.license)}
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
@@ -46,6 +46,7 @@ ${data.install}
 
 ## Usage 
 ${data.use}
+
 ${renderLicenseSection(data.license)}
 
 ## Tests
@@ -58,6 +59,7 @@ ${data.questions}
 Email: ${data.email}
 
 GitHub: [${data.user}](https://github.com/${data.user}) 
+
 `}
 
 module.exports = generateMarkdown;
