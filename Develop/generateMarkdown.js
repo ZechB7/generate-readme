@@ -1,50 +1,63 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(data) {}
-`![GitHub](https://img.shields.io/github/license/ZechB7/generate-readme)`
+function renderLicenseBadge(license) {
+  if (license !== "None") {
+    return `![license](https://img.shields.io/badge/license-${license}-blue)`;
+  }
+  return " ";
+}
+
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(data) {}
-
+function renderLicenseLink(license) {
+  if (license !== "None")  {
+    return `* [License](#license)`;
+  }
+  return " ";
+}
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(data){
-if(${data.license ==='none'}){
-  return ``
-}else{
-  return `
-  ## License
-  This project is licensed under the ${data.license} License.
-`}}
-
+function renderLicenseSection(license) {
+  if (license !== "None")  {
+    return `
+    ## License
+    This project is licensed under the ${license} license.`
+}
+return " ";
+}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
 # ${data.project}
-![GitHub](https://img.shields.io/github/license/${data.githubuser}/${data.project})
+${renderLicenseBadge(data.license)}
 ## Description
 ${data.description}
+
 ## Table of Contents
 * [Installation](#installation)
-* [Usage](#usage)
-* [License](#license)
+* [Usage](#usage) ${renderLicenseLink(data.license)}
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
+
 ## Installation
-To install necessary dependencies, run the following command:
-${data.installdep}
+To install necessary dependencies, run the following command in the terminal using node.js:
+${data.install}
+
 ## Usage 
-${data.usingrepo}
+${data.use}
 ${renderLicenseSection(data.license)}
-## Contributing
-${data.contrepo}
+
 ## Tests
 To run tests, run the following command:
-${data.testdep}
+${data.test}
+
 ## Questions
 ${data.questions}
 
+Email: ${data.email}
+
+GitHub: [${data.user}](https://github.com/${data.user}) 
 `}
 
 module.exports = generateMarkdown;

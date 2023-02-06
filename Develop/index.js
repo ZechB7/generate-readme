@@ -1,7 +1,6 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-
 const generateMarkdown = require('./generateMarkdown');
 
 // TODO: Create an array of questions for user input
@@ -10,7 +9,7 @@ const promptUser = () =>
         {
             type: 'input',
             message: 'What is your GitHub username?',
-            name: 'githubuser',
+            name: 'user',
         },
         {
             type: 'input',
@@ -33,33 +32,26 @@ const promptUser = () =>
             message: 'What kind of license should your project have?',
             choices: [
                 'MIT',
-                'APACHE 2.0',
-                'GPL 3.0',
-                'BSD 3',
+                'APACHE_2.0',
+                'GPL_3.0',
+                'BSD_3',
                 'None',
             ],
         },
         {
             type: 'input',
-            message: 'What command should be run to install dependencies?',
-            default: 'npm i',
-            name: 'installdep'
+            message: 'What is required to install and how?',
+            name: 'install'
         },
         {
             type: 'input',
-            message: 'What command should be run to run tests?',
-            default: 'npm test',
-            name: 'testdep',
+            message: 'How can the application be tested?',
+            name: 'test',
         },
         {
             type: 'input',
             message: 'What does the user need to know about using the repo?',
-            name: 'usingrepo',
-        },
-        {
-            type: 'input',
-            message: 'What does the user need to know about contributing to the repo?',
-            name: 'contrepo',
+            name: 'use',
         },
         {
             type: 'input',
